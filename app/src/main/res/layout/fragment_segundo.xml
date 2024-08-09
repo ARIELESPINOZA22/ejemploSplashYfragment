@@ -7,12 +7,22 @@
     tools:context=".segundoFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:padding="10dp"
+        android:text="SERVICIOS"
         android:textColor="@color/black"
-        android:textSize="30dp"
-        android:text="segundo fragment" />
+        android:textSize="30dp" />
+
+
+    <ListView
+        android:id="@+id/listaPeliculas"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_gravity="center"
+        tools:listitem="@android:layout/simple_list_item_1" />
+
 
 </FrameLayout>
