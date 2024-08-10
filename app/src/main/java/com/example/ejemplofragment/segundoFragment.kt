@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ListView
+
 import com.example.ejemplofragment.databinding.ActivityMainBinding
 
-// TODO: Rename parameter arguments, choose names that match
+ //TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -23,8 +25,6 @@ class segundoFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -33,7 +33,21 @@ class segundoFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
+    }
 
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Obtener referencia al ListView
+        val listView: ListView = view.findViewById(R.id.listView)
+
+        // Datos para el ListView
+        val items = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
+
+        // Crear un adaptador y asignarlo al ListView
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, items)
+        listView.adapter = adapter
     }
 
     override fun onCreateView(
@@ -43,6 +57,7 @@ class segundoFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_segundo, container, false)
     }
+
 
     companion object {
         /**
@@ -64,3 +79,5 @@ class segundoFragment : Fragment() {
             }
     }
 }
+
+

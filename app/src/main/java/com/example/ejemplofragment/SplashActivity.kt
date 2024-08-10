@@ -7,7 +7,7 @@ import android.os.Handler
 
 class SplashActivity : AppCompatActivity() {
 
-    private val tiempo:Long=5000
+    private val tiempo:Long=3000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
